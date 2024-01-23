@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import {Text, View} from 'react-native';
 import GeneralLayout from '../layouts/GeneralLayout';
@@ -6,7 +5,7 @@ import GeneralLayout from '../layouts/GeneralLayout';
 const BorrowedBooksScreen = () => {
   return (
     <GeneralLayout>
-      <View>
+      <View className="flex-1 items-center justify-center h-screen">
         <Text>BorrowedBooksScreen</Text>
       </View>
     </GeneralLayout>

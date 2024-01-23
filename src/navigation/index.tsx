@@ -1,12 +1,7 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
-import {
-  BookDetailsScreen,
-  BorrowedBooksScreen,
-  HomeScreen,
-  ReadBooksScreen,
-} from 'screens';
+import {BookDetailsScreen} from 'screens';
 import CustomTabBar from 'components/CustomTabBar';
 
 const AppNavigation = () => {
@@ -15,16 +10,13 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="Main"
         screenOptions={{
           headerShown: false,
         }}>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Borrowed" component={BorrowedBooksScreen} />
-        <Stack.Screen name="Read" component={ReadBooksScreen} />
+        <Stack.Screen name="Main" component={CustomTabBar} />
         <Stack.Screen name="Details" component={BookDetailsScreen} />
       </Stack.Navigator>
-      <CustomTabBar />
     </NavigationContainer>
   );
 };

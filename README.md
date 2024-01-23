@@ -1,9 +1,25 @@
+V 1.0
+
 - NativeWind ✅
-- Redux Query
-- TabBar with Float Button
+- TabBar with Float Button ✅
+- Navigation ✅
 - React Native Paper ✅
 - React Native Vector Icons ✅
-- React Native Normalize
+- Redux Query
+- Book cover
+- Custom font
 - Splash Screen
 - App Icon
-- Custom fonts
+
+V 2.0
+
+- Animations
+- Book categories
+- Filter books
+- Sort books
+- Tags
+- Opinions
+- Accounts and statistics
+- Dark/light mode
+- React Native Normalize
+- Translations with i18n
