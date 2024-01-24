@@ -14,6 +14,7 @@ V 1.0
 V 2.0
 
 - Animations
+- Shared transitions
 - Book categories
 - Filter books
 - Sort books
@@ -23,3 +24,4 @@ V 2.0
 - Dark/light mode
 - React Native Normalize
 - Translations with i18n
+- Forms validations
