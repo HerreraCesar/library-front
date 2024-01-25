@@ -10,6 +10,8 @@ V 1.0
 - Custom font
 - Splash Screen
 - App Icon
+- Snackbar
+- Code splitting
 
 V 2.0
 

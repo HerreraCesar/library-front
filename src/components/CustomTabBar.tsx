@@ -1,8 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {Animated, View} from 'react-native';
+import {Animated, ScrollView, TouchableOpacity, View} from 'react-native';
 import {CurvedBottomBar} from 'react-native-curved-bottom-bar';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Button, Text, TextInput} from 'react-native-paper';
 import {
   BookDetailsScreen,
@@ -23,6 +22,7 @@ const CircleItem = ({
 }) => {
   return (
     <TouchableOpacity
+      activeOpacity={0.8}
       onPress={onPress}
       className={`h-[60] w-[60] rounded-full items-center justify-center bg-white bottom-[30] ${styles}`}
       style={{
@@ -47,9 +47,9 @@ const TabItem = ({
   );
 };
 
-const CustomTabBar = () => {
+const CustomTabBar = ({navigation}: any) => {
   const [openSheet, setOpenSheet] = useState(false);
-  const [section, setSection] = useState('Nuevo');
+  const [section, setSection] = useState('Inicio');
 
   const renderTabBar = ({
     routeName,
@@ -82,7 +82,10 @@ const CustomTabBar = () => {
       )
     ) : (
       <TabItem
-        onPress={() => navigate(routeName)}
+        onPress={() => {
+          setSection(routeName);
+          navigate(routeName);
+        }}
         children={
           <Text
             className={`text-black ${
@@ -135,12 +138,15 @@ const CustomTabBar = () => {
           ) : selectedTab === 'Prestados' || selectedTab === 'Leídos' ? (
             <CircleItem
               children={<Icon name="home" size={30} color="black" />}
-              onPress={() => navigate('Inicio')}
+              onPress={() => {
+                setSection('Inicio');
+                navigate('Inicio');
+              }}
             />
           ) : selectedTab === 'Detalles' ? (
             <CircleItem
               children={<Icon name="check" size={30} color="black" />}
-              onPress={() => navigate('Leídos')}
+              onPress={() => console.log('check')}
             />
           ) : (
             <CircleItem
@@ -167,7 +173,13 @@ const CustomTabBar = () => {
         />
         <CurvedBottomBar.Screen
           name="Detalles"
-          component={BookDetailsScreen}
+          // eslint-disable-next-line react/no-unstable-nested-components
+          component={() => (
+            <BookDetailsScreen
+              setOpenSheet={setOpenSheet}
+              navigation={navigation}
+            />
+          )}
           position="CIRCLE"
         />
       </CurvedBottomBar.Navigator>
@@ -179,15 +191,9 @@ const CustomTabBar = () => {
                 ? 'h-[251]'
                 : section === 'Prestar'
                 ? 'h-[351]'
-                : '70%'
+                : 'h-[70%]'
             }`}>
             <BottomSheet section={section} setOpenSheet={setOpenSheet} />
-            {/* 
-            0: 'Home',
-            1: 'Prestamos',
-            2: 'Detalles',
-            3: 'Leidos', 
-            */}
           </View>
         </View>
       )}
@@ -246,8 +252,63 @@ const BottomSheet = ({
         </Button>
       </View>
     </View>
+  ) : section === 'Inicio' || section === 'Detalles' ? (
+    <ScrollView>
+      <View className="flex items-start justify-evenly pb-6 pt-2 px-14 h-full w-full gap-6">
+        <TextInput
+          className="w-full"
+          mode="outlined"
+          label="Portada"
+          // value={text}
+          // onChangeText={text => setText(text)}
+        />
+        <TextInput
+          className="w-full"
+          mode="outlined"
+          label="Título"
+          // value={text}
+          // onChangeText={text => setText(text)}
+        />
+        <TextInput
+          className="w-full"
+          mode="outlined"
+          label="Autor"
+          // value={text}
+          // onChangeText={text => setText(text)}
+        />
+        <TextInput
+          className="w-full"
+          mode="outlined"
+          label="Descripción"
+          // value={text}
+          // onChangeText={text => setText(text)}
+        />
+        <TextInput
+          className="w-full"
+          mode="outlined"
+          label="Año"
+          // value={text}
+          // onChangeText={text => setText(text)}
+        />
+        <TextInput
+          className="w-full"
+          mode="outlined"
+          label="Páginas"
+          // value={text}
+          // onChangeText={text => setText(text)}
+        />
+        <View className="flex flex-row w-full justify-evenly mt-8">
+          <Button mode="text" onPress={() => setOpenSheet(false)}>
+            Cancelar
+          </Button>
+          <Button mode="text" onPress={() => console.log('Pressed')}>
+            Guardar
+          </Button>
+        </View>
+      </View>
+    </ScrollView>
   ) : (
-    <View></View>
+    <></>
   );
 };
 

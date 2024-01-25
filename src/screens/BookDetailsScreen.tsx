@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Octicons';
 import {BlurView} from '@react-native-community/blur';
 
-const BookDetailsScreen = ({navigation}: any) => {
+const BookDetailsScreen = ({navigation, setOpenSheet}: any) => {
   return (
     <GeneralLayout>
       <View className="flex-1 items-start justify-start min-h-screen p-6 pt-24 gap-4">
@@ -24,7 +24,7 @@ const BookDetailsScreen = ({navigation}: any) => {
           variant="secondary"
           customSize={40}
           className="absolute top-6 right-5"
-          onPress={() => console.log('Pressed')}
+          onPress={() => setOpenSheet(true)}
         />
         <View className="mb-4 flex w-full flex-row justify-start">
           <Image
@@ -74,7 +74,7 @@ const BookDetailsScreen = ({navigation}: any) => {
           blurType="light"
           // eslint-disable-next-line react-native/no-inline-styles
           style={{
-            height: 250,
+            height: 270,
             width: 'auto',
             backgroundColor: 'transparent',
             position: 'absolute',
@@ -88,11 +88,11 @@ const BookDetailsScreen = ({navigation}: any) => {
           blurAmount={1}
         />
         <LinearGradient
-          colors={['rgba(250, 250, 250, 0.1)', 'rgba(230, 230, 230, 0.85)']}
+          colors={['rgba(255, 255, 255, 0.1)', 'rgba(210, 210, 210, 0.85)']}
           className={
-            'absolute bottom-0 left-0 w-screen h-[260] flex items-center justify-center'
+            'absolute bottom-0 left-0 w-screen h-[270] flex items-center justify-center '
           }>
-          <Text className="text-lg text-gray-800 italic font-light">
+          <Text className="text-lg text-gray-500 italic font-regular">
             proximamente...
           </Text>
         </LinearGradient>
