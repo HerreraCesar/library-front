@@ -16,7 +16,16 @@ module.exports = {
           '@layouts': './src/layouts/index',
           '@screens': './src/screens/index',
           '@services': './src/services/index',
+          '@store': './src/store/index',
         },
+      },
+    ],
+    [
+      'module:react-native-dotenv',
+      {
+        envName: 'APP_ENV',
+        moduleName: '@env',
+        path: '.env',
       },
     ],
   ],
