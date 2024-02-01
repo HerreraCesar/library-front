@@ -1,11 +1,7 @@
 import {IBook} from 'interfaces';
 import React from 'react';
-import {Text} from 'react-native';
-import {Image} from 'react-native';
-import {TouchableOpacity, View} from 'react-native';
-import {setSelectedSection} from 'store';
-import {setSelectedBook} from 'store/features/selectedBookSlice';
-import {useAppDispatch} from 'store/hooks';
+import {TouchableOpacity, View, Text, Image} from 'react-native';
+import {setSelectedBook, setSelectedSection, useAppDispatch} from 'store';
 
 const Book = ({navigation, data}: {navigation: any; data: IBook}) => {
   const dispatch = useAppDispatch();

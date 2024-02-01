@@ -45,7 +45,7 @@ const CustomTabBar = ({navigation}: any) => {
             ? 249
             : selectedSection === 'Prestar'
             ? 349
-            : '70%',
+            : '75%',
           zIndex: 10,
           borderBottomWidth: 0,
           paddingBottom: 0,
@@ -90,10 +90,7 @@ const CustomTabBar = ({navigation}: any) => {
           ) : (
             <CircleItem
               children={<Icon name="plus" size={30} color="black" />}
-              onPress={() => {
-                // dispatch(setSelectedSection('Inicio'));
-                dispatch(setIsOpenSheet(true));
-              }}
+              onPress={() => dispatch(setIsOpenSheet(true))}
             />
           )
         }
@@ -104,11 +101,7 @@ const CustomTabBar = ({navigation}: any) => {
             routeName={routeName}
             selectedTab={selectedTab}
           />
-        )}
-        // tabBar={({routeName, navigate, selectedTab}) =>
-        //   Tabs({routeName, navigate, selectedTab, isOpenSheet, dispatch})
-        // }
-      >
+        )}>
         <CurvedBottomBar.Screen
           name="Inicio"
           component={HomeScreen}
@@ -139,7 +132,7 @@ const CustomTabBar = ({navigation}: any) => {
                 ? 'h-[251]'
                 : selectedSection === 'Prestar'
                 ? 'h-[351]'
-                : 'h-[70%]'
+                : 'h-[75.1%]'
             }`}>
             <BottomSheet />
           </View>

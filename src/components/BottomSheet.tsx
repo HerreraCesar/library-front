@@ -1,11 +1,15 @@
 import React from 'react';
 
 import {RootState, useAppSelector} from 'store';
-import {AddBook, BorrowBook, DeleteBook, EditBook} from '@components';
+import {BookForm, BorrowBook, DeleteBook} from '@components';
 
 const BottomSheet = () => {
   const selectedSection = useAppSelector(
     (state: RootState) => state.selectedSection.section,
+  );
+
+  const selectedBook = useAppSelector(
+    (state: RootState) => state.selectedBook.book,
   );
 
   return selectedSection === 'Borrar' ? (
@@ -13,9 +17,9 @@ const BottomSheet = () => {
   ) : selectedSection === 'Prestar' ? (
     <BorrowBook />
   ) : selectedSection === 'Detalles' ? (
-    <EditBook />
+    <BookForm initialValue={selectedBook} />
   ) : (
-    <AddBook />
+    <BookForm />
   );
 };
 

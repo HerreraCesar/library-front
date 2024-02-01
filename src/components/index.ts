@@ -6,7 +6,6 @@ export {default as CircleItem} from './CircleItem';
 export {default as TabItem} from './TabItem';
 export {default as Tabs} from './Tabs';
 export {default as BottomSheet} from './BottomSheet';
-export {default as EditBook} from './EditBook';
-export {default as AddBook} from './AddBook';
+export {default as BookForm} from './BookForm';
 export {default as DeleteBook} from './DeleteBook';
 export {default as BorrowBook} from './BorrowBook';
