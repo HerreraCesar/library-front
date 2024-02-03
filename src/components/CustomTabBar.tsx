@@ -73,11 +73,12 @@ const CustomTabBar = ({navigation}: any) => {
             />
           ) : selectedSection === 'Detalles' ? (
             <CircleItem
+              styles={selectedBook?.read ? 'bg-green-500' : 'bg-white'}
               children={
                 <Icon
                   name="check"
                   size={30}
-                  color={selectedBook?.read ? 'gray' : 'green'}
+                  color={selectedBook?.read ? 'white' : 'black'}
                 />
               }
               onPress={() =>

@@ -14,11 +14,12 @@ const Book = ({navigation, data}: {navigation: any; data: IBook}) => {
       }}>
       <View className="mb-6 w-[150]">
         <Image
-          loadingIndicatorSource={require('../assets/image-placeholder.png')}
           source={{uri: data.cover}}
-          className="h-[220] w-[150] rounded-2xl object-cover"
+          className="h-[210] w-[140] rounded-2xl object-cover"
         />
-        <Text className="mt-4 text-md text-center">{data.title}</Text>
+        <Text className="mt-4 text-md text-center font-neuton">
+          {data.title}
+        </Text>
       </View>
     </TouchableOpacity>
   );

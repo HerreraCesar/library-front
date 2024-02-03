@@ -12,7 +12,7 @@ const HomeScreen = ({navigation}: any) => {
   if (data)
     return (
       <View className="flex-1 w-screen h-screen p-8 gap-4">
-        <Text className="text-3xl font-bold">Mi biblioteca</Text>
+        <Text className="text-4xl font-neuton-bold ">Mi biblioteca</Text>
         <Searchbar
           className="w-full"
           placeholder="Buscar"
@@ -21,7 +21,9 @@ const HomeScreen = ({navigation}: any) => {
         />
         <FlatList
           className="w-full pt-4 mb-16"
-          data={data}
+          data={data.filter(book =>
+            book.title.toLowerCase().includes(searchQuery.toLowerCase()),
+          )}
           renderItem={({item}) => <Book navigation={navigation} data={item} />}
           keyExtractor={item => item.id}
           numColumns={2}

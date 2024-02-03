@@ -4,11 +4,11 @@ export interface IBook {
   title: string;
   author: string;
   description?: string;
-  year?: number;
-  pages?: number;
+  year?: string;
+  pages?: string;
   read: boolean;
-  readDate?: Date;
+  readDate?: string;
   borrowed: boolean;
   borrowedTo?: string;
-  borrowedAt?: Date;
+  borrowedAt?: string;
 }

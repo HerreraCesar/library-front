@@ -30,7 +30,7 @@ const Tabs: React.FC<TabBarProps> = ({routeName, navigate, selectedTab}) => {
           dispatch(setSelectedSection('Prestar'));
           dispatch(setIsOpenSheet(true));
         }}
-        children={<Text className={'text-black'}>Prestar</Text>}
+        children={<Text className={'text-black font-neuton'}>Prestar</Text>}
       />
     ) : (
       <TabItem
@@ -38,7 +38,7 @@ const Tabs: React.FC<TabBarProps> = ({routeName, navigate, selectedTab}) => {
           dispatch(setSelectedSection('Borrar'));
           dispatch(setIsOpenSheet(true));
         }}
-        children={<Text className={`text-black`}>Borrar</Text>}
+        children={<Text className={`text-black font-neuton`}>Borrar</Text>}
       />
     )
   ) : (
@@ -49,7 +49,9 @@ const Tabs: React.FC<TabBarProps> = ({routeName, navigate, selectedTab}) => {
       }}
       children={
         <Text
-          className={`text-black ${selectedTab === routeName && 'font-bold'}`}>
+          className={`text-black font-neuton ${
+            selectedTab === routeName && 'font-neuton-bold'
+          }`}>
           {routeName}
         </Text>
       }
