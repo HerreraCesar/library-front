@@ -60,11 +60,9 @@ const BookForm = ({initialValue}: Props) => {
             render={({field: {onChange, onBlur, value, ref}}) => (
               <TextInput
                 disabled={true}
-                className="w-full mt-4 font-neuton"
+                className="w-full mt-3 font-neuton"
                 mode="outlined"
-                label={
-                  <Text className="text-gray-400 font-neuton">Portada</Text>
-                }
+                label={<Text className="text-gray-400">Portada</Text>}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -84,9 +82,7 @@ const BookForm = ({initialValue}: Props) => {
                 maxLength={60}
                 className="w-full mt-3 font-neuton"
                 mode="outlined"
-                label={
-                  <Text className="text-gray-500 font-neuton">Título</Text>
-                }
+                label={<Text className="text-gray-500">Título</Text>}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -112,7 +108,7 @@ const BookForm = ({initialValue}: Props) => {
                 maxLength={30}
                 className="w-full mt-3"
                 mode="outlined"
-                label={<Text className="text-gray-500 font-neuton">Autor</Text>}
+                label={<Text className="text-gray-500">Autor</Text>}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -136,9 +132,7 @@ const BookForm = ({initialValue}: Props) => {
                 maxLength={300}
                 className="w-full mt-3 font-neuton"
                 mode="outlined"
-                label={
-                  <Text className="text-gray-500 font-neuton">Descripción</Text>
-                }
+                label={<Text className="text-gray-500">Descripción</Text>}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -174,7 +168,7 @@ const BookForm = ({initialValue}: Props) => {
                 maxLength={6}
                 className="w-full mt-3 font-neuton"
                 mode="outlined"
-                label={<Text className="text-gray-500 font-neuton">Año</Text>}
+                label={<Text className="text-gray-500 ">Año</Text>}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -209,9 +203,7 @@ const BookForm = ({initialValue}: Props) => {
                 maxLength={5}
                 className="w-full mt-3 font-neuton"
                 mode="outlined"
-                label={
-                  <Text className="text-gray-500 font-neuton">Páginas</Text>
-                }
+                label={<Text className="text-gray-500 ">Páginas</Text>}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}

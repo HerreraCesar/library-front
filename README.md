@@ -6,18 +6,19 @@ V 1.0
 - React Native Paper ✅
 - React Native Vector Icons ✅
 - Redux Query ✅
-- Splash Screen
-- App Icon
+- App Icon ✅
 - Snackbar ✅
 - Code splitting ✅
+- Custom font ✅
+- Form validations ✅
 
 V 2.0
 
+- Splash Screen
 - Read section
 - Borrowed section
 - Book cover
 - Animations
-- Custom font
 - Shared transitions
 - Book categories
 - Filter books
@@ -29,4 +30,3 @@ V 2.0
 - Skeletons
 - React Native Normalize
 - Translations with i18n
-- Forms validations
