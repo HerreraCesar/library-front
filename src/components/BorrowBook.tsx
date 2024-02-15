@@ -65,7 +65,7 @@ const BorrowBook = () => {
             maxLength={30}
             className="w-full mt-3 font-neuton"
             mode="outlined"
-            label={<Text className="text-gray-500 font-neuton">Nombre</Text>}
+            label={<Text className="text-gray-500">Nombre</Text>}
             value={value}
             onChangeText={onChange}
             onBlur={onBlur}
@@ -108,7 +108,7 @@ const BorrowBook = () => {
             maxLength={10}
             className="w-full mt-3 font-neuton"
             mode="outlined"
-            label={<Text className="text-gray-500 font-neuton">Fecha</Text>}
+            label={<Text className="text-gray-500">Fecha</Text>}
             value={value}
             onChangeText={onChange}
             onBlur={onBlur}

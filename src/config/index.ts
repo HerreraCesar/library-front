@@ -7,7 +7,6 @@ export const config = {
   info: {},
   tokens: {},
   urls: {
-    // imagePlaceholder: 'https://i.ibb.co/PtQdJvs/cover.jpg',
     imagePlaceholder: 'https://i.ibb.co/G35y7bC/image-placeholder.png',
   },
 };
